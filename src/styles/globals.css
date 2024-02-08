@@ -1,33 +1,270 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: altonebold;
+    src: url('../../public/fonts/Altone Trial Bold.ttf');
+}
+@font-face {
+    font-family: altone;
+    src: url('../../public/fonts/Altone Trial Regular.ttf');
+}
+@font-face {
+  font-family: publica;
+  src: url('../../public/fonts/PublicaSans-Regular.ttf');
+}
+/* DESKTOP VIEW */
+@media (min-width: 768px){
+  .hero{
+    height: 100vh;
+  }
+  .mainimg{
+    height: 20rem;
+    width: 25rem;
+  }
+}
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+  html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .wave{
+    display: none;
+  }
+  .hero{
+    padding: 8rem 2rem;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    gap: 6em;
+    height: auto;
+  }
+  .hero .herocont{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 3.5rem;
+  }
+  .hero .herocont .heroconttxt{
+    height: auto;
+    width: auto;
+  }
+  .hero .p .morph{
+    height: 17.5em;
+    width: 17.5em;
+  }
+  .hero .herocont h1{
+    font-size: 2.8rem;
+  }
+  .hero .herocont p{
+    font-size: 1rem;
+    margin-left: 1.8rem;
+    margin-right: 1.8rem;
+  }
+  .hero .heroicon .cont .text p{
+    padding: 0;
+  }
+  .hero .heroicon .cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 1rem;
+  }
+  .hero .heroicon .cont .vline{
+    display: none;
+  }
+  .hero .heroicon .cont hr{
+    display: flex;
+  }
+  .light .hero .heroicon .cont hr{
+    background-color: black;
+  }
+  .hero .heroicon .logos{
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+   }
+   .about{
+    padding: 6rem 2rem;
+   }
+   .about .abtcontainer .aboutcont{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+   }
+   .mainimg{
+    height: auto;
+    width: auto;
+   }
+   .frontwheel, .laptopimg{
+    display: none;
 
+   }
+   .about .abtcontainer .aboutcont .aboutcnt h1{
+    padding: 0.5rem;
+   }
+   .about .abtcontainer .aboutcont .aboutcnt button{
+    font-size: large;
+   }
+
+   .projects{
+    padding: 6rem 2rem;
+   }
+   .projects .projectscont .projectgrid{
+    display: flex;
+    flex-direction: column;
+   }
+   .projects .projectscont .projectgrid .projecttxtbox{
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+   }
+   .projects .projectscont .projectgrid.rev{
+    flex-direction: column-reverse;
+   }
+   .projects .projectscont .projectgrid .projecttxtbox .projectdesc{
+    height: 90%;
+    width: 90%;
+    margin-top: -10rem;
+   }
+   .projects .projectscont .projectgrid .projecttxtbox .projectdesc h1{
+    font-size: x-large;
+   }
+   .projects .projectscont .projectgrid .projecttxtbox .projectdesc p{
+    font-size: medium;
+   }
+   .projects button{
+    display: block;
+    margin: auto;
+   }
+   .contact{
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+   }
+   .contact .contactcont .contactcnt h1{
+    padding: 0.6rem;
+    font-size: larger;
+   }
+   .contact .contactcont .contactcnt h2{
+    font-size: x-large;
+   }
+   .contact .contactcont .contacticontxtcont{
+    align-items: center;
+    justify-content: center;
+   }
+   .contact .contactcont .contacticontxtcont .contacticontxt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+   }
+   .contact .contactcont .contacticontxtcont .contacticontxt h1{
+    font-size: larger;
+    padding: 0.8rem;
+   }
+   .contact .contactcont .contacticontxtcont .contacticontxt p{
+    font-size: large;
+   }
+ 
+
+}
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --nav-background-light: #f9f9f9;
+    --nav-background-dark: #151515;
+    --hero-background-light: #f9f9f9;
+    --hero-background-dark: #151515;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .light{
+    color: #2d2e32;
   }
-}
+  .hero {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .light .hero, .light .projects {
+    background-color: var(--hero-background-light);
+  }  
+  .dark .hero, .dark .projects {
+    background-color: var(--hero-background-dark);
+   }
+  .dark .about{
+    background-color: #121212;
+  }
+  section .wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('../assets/wave.png');
+    background-size: 1000px 100px;
+  }
+  .light section .wave{
+    background: url('../assets/wavelight.png');
+  }
+  section .wave.wave1{
+    animation: animate 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+  }
+  section .wave.wave2{
+    animation: animate2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+  }
+  section .wave.wave3{
+    animation: animate 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -5s;
+    bottom: 20px;
+  }
+  section .wave.wave4{
+    animation: animate2 15s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 15px;
+  }
+  @keyframes animate
+  {
+    0%
+    {
+      background-position-x: 0;
+    }
+    100%
+    {
+      background-position-x: 1000px;
+    }
+  }
+  @keyframes animate2
+  {
+    0%
+    {
+      background-position-x: 0;
+    }
+    100%
+    {
+      background-position-x: -1000px;
+    }
+  }

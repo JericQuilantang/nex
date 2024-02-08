@@ -1,118 +1,307 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
+import { Button } from "@/components/ui/button";
+import Layout from "@/components/Layout";
+import { ChevronRight, GithubIcon, LinkedinIcon, Mail, PhoneCall } from "lucide-react";
+import waving from "../assets/waving.png";
+import portrait from "../assets/portrait.png";
+import icon1 from "../assets/icon1.svg";
+import icon2 from "../assets/icon2.svg";
+import icon3 from "../assets/icon3.svg";
+import icon4 from "../assets/icon4.svg";
+import aboutimg from "../assets/aboutimg.avif";
+import laptopimg from "../assets/laptop.png";
+import frontendspin from "../assets/frontend.svg";
+import Image from "next/image";
+import { Link } from "react-scroll";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0" />
+      <Layout>
+        <style>
+          {`
+          .morph{
+            display: flex;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            box-shadow: 15px 15px 50px rgba(0,0,0,0.2);
+            animation: morphing 10s infinite;
+            overflow: hidden;
+          }
+          .morph:hover {
+            animation-play-state: paused;
+          }
+          @keyframes morphing_dark {
+            0% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                box-shadow: 15px 15px 50px rgba(0,0,0,0.2);
+                border: 3px solid #f9f9f9;
+            }
+            25% { 
+                border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+                border: 3px solid #f9f9f9;
+            }
+            50% {
+                border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+                box-shadow: -10px -5px 50px rgba(0,0,0,0.2);
+                border: 3px solid #f9f9f9;
+            }
+            75% {
+                border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+                border: 3px solid #f9f9f9;	
+            }
+            100%{
+                border: 3px solid #f9f9f9;
+            }
+          } 
+          @keyframes morphing {
+            0% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                box-shadow: 15px 15px 50px rgba(0,0,0,0.2);
+                border: 3px solid black;
+            }
+            25% { 
+                border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+                border: 3px solid black;
+            }
+            50% {
+                border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+                box-shadow: -10px -5px 50px rgba(0,0,0,0.2);
+                border: 3px solid black;
+            }
+            75% {
+                border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+                border: 3px solid black;	
+            }
+            100%{
+                border: 3px solid black;
+            }
+          }
+          @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+          }
+          .frontwheel {
+            animation: spin 8s linear infinite;
+          }
+        .light {
+          .frontwheel {
+            background: white;
+          }
+          .morph{
+            background: #b5b2ac;
+          }
+          .vline{
+            --tw-bg-opacity: 1;
+            background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+          }
+        }
+        .dark {
+          .frontwheel {
+            background: #ededed;
+            --tw-invert: invert(100%);
+            filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          }
+          .morph{
+            animation: morphing_dark 10s infinite;
+            background: #5a5956;
+          }
+          .vline{
+            background-color: white;
+          }
+        }
+        .projectimg{
+          overflow: hidden;
+          border-radius: 1.5rem;
+        }
+        .projectgrid img {
+        transition: transform 0.5s, filter 1s ease-in-out;
+        transform: scale(1);
+        }
+      
+        .projectimg img:hover {
+        transform: scale(1.2);
+        }
+          `}
+        </style>
+        <section className="hero px-64 pb-28 pt-48">
+          <div className="wave wave1"></div>
+          <div className="wave wave2"></div>
+          <div className="wave wave3"></div>
+          <div className="wave wave4"></div>
+          <div className="herocont flex justify-between">
+            <div className="heroconttxt h-auto w-[28rem]">
+              <h1 className='font-altoneBold text-6xl'>Front-End Next Developer <Image src={waving} alt="👋🏻" width={56} height={56} className="h-14 w-14 inline-block"/>
+              </h1>
+              <p className="py-4 text-lg font-altoneReg">Hi, I'm Jeric Ivan. A passionate Front-end Developer based in Cabanatuan City, Nueva Ecija. 📍</p>
+              <Button variant="default" size="icon">
+                <a href="https://www.linkedin.com/in/jeric-quilantang-a86508288/" target="_blank">
+                  <LinkedinIcon className=" hover:text-blue-500" />
+                </a>
+              </Button>
+              <Button variant="default" size="icon">
+                <a href="https://github.com/JericQuilantang" target="_blank">
+                  <GithubIcon className=" hover:text-blue-500"/>
+                </a>
+              </Button>
+            </div>
+            <div className="p">
+              <div className="morph border-black">
+                <Image src={portrait} alt="portrait" width={500} height={500} className="object-cover h-80 w-80" />
+              </div>
+            </div>
+          </div>
+          <div className="heroicon flex flex-1">
+            <div className="cont flex items-center py-20 text-lg font-semibold">
+              <div className="text inline-block">
+                <p className="pr-4 inline-block font-altoneReg text-[#22ce9d]">TechstacksPH</p>
+                <hr className=" hidden" />
+                <div className="vline inline-block h-[20px] min-h-[1em] w-[1.5px] self-stretch bg-auto opacity-50 dark:opacity-50 align-middle">
+                </div>
+              </div>
+              <div className="logos inline-block pl-14">
+                <ul className="flex flex-wrap gap-8 list-none justify-center">
+                  <li>
+                    <Image src={icon1} alt="icon1" className="hover:animate-bounce hover:cursor-pointer"/>
+                  </li>
+                  <li>
+                    <Image src={icon2} alt="icon2" className="hover:animate-bounce hover:cursor-pointer"/>
+                  </li>
+                  <li>
+                    <Image src={icon3} alt="icon3" className="hover:animate-bounce hover:cursor-pointer"/>
+                  </li>
+                  <li>
+                    <Image src={icon4} alt="icon4" className="hover:animate-bounce hover:cursor-pointer"/>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="about px-64 py-28" id="about">
+          <div className="abtcontainer">
+            <div className="aboutcont items-center grid justify-center grid-cols-2">
+              <div className="aboutimg relative">
+                <Image src={aboutimg} alt="mainimg" width={25 * 16} height={20 * 16} className="mainimg rounded-3xl object-cover" />
+                <span className="lightwheel absolute bottom-0 right-5 transform translate-y-10">
+                  <Image src={frontendspin} alt="frontendwheel" className="frontwheel h-[180px] w-[180px] rounded-full" />
+                </span>
+                <Image src={laptopimg} alt="laptopimg" className="laptopimg absolute bottom-5 right-20 h-[60px] w-[60px] object-cover" />
+              </div>
+              <div className="aboutcnt">
+                <h1 className="font-altoneBold text-1xl text-blue-700">ABOUT ME</h1>
+                <h1 className="font-altoneBold text-2xl">Front-end Developer based in Nueva Ecija, PH 📍</h1>
+                <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">I like CSS styling. I love video and photo editing and developing dynamic, intuitive user experiences.</p>
+                <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">My main stack currently is React/Next.js in combination with Tailwind CSS and TypeScript.</p>
+                <Button variant="link" size="default">
+                  <ChevronRight className="inline-block"/>
+                  <span className="pl-2 font-altoneReg"><a href="/cv/CV.pdf" target="_blank"> Download CV</a></span>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="projects px-64 py-28" id="projects">
+          <h1 className="headtxt font-altoneBold text-4xl text-center pb-[3.5rem]">PROJECTS</h1>
+          <div className="projectscont">
+            <div className="projectgrid flex flex-1 py-10 justify-center">
+              <div className="projectcard">
+                <div className="projectimg">
+                  <Image src={aboutimg} alt="projectimg" className="h-[30rem] w-[25rem] object-cover shadow-lg shadow-[#17171772]" />
+                </div>
+              </div>
+              <div className="projecttxtbox mt-16 -ml-32 z-10">
+                <div className="projectdesc bg-white dark:bg-[#171717] rounded-3xl px-5 py-10 shadow-md dark:shadow-zinc-800 min-h-[20rem] w-[28rem]">
+                  <h1 className="font-altoneBold text-2xl">Project 1</h1>
+                  <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, corrupti! Reprehenderit esse officiis ex veritatis, quo qui eius porro aliquam in distinctio nulla repellendus eos, necessitatibus eveniet laborum ratione neque.
+                  </p>
+                  <Button variant="outline" size="default" className="rounded-2xl bg-blue-800 hover:bg-blue-500 text-[#f9f9f9] hover:text-black">
+                    <ChevronRight className="inline-block hover:text-black"/>
+                    <span className=" pl-2 font-altoneReg">View Project</span>
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <div className="projectgrid rev flex flex-1 py-10 justify-center">
+              <div className="projecttxtbox mt-16 -mr-32 z-10">
+                <div className="projectdesc bg-white dark:bg-[#171717] rounded-3xl px-5 py-10 shadow-md dark:shadow-zinc-800 min-h-[20rem] w-[28rem]">
+                  <h1 className="font-altoneBold text-2xl">Project 2</h1>
+                  <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, corrupti! Reprehenderit esse officiis ex veritatis, quo qui eius porro aliquam in distinctio nulla repellendus eos, necessitatibus eveniet laborum ratione neque.
+                  </p>
+                  <Button variant="outline" size="default" className="rounded-2xl bg-blue-800 hover:bg-blue-500 text-[#f9f9f9] hover:text-black">
+                    <ChevronRight className="inline-block hover:text-black"/>
+                    <span className=" pl-2 font-altoneReg">View Project</span>
+                  </Button>
+                </div>
+              </div>
+              <div className="projectcard">
+                <div className="projectimg">
+                  <Image src={aboutimg} alt="projectimg" className="h-[30rem] w-[25rem] rounded-3xl object-cover shadow-lg shadow-[#17171772]" />
+                </div>
+              </div>
+            </div>
+            <div className="projectgrid flex flex-1 py-10 justify-center">
+              <div className="projectcard">
+                <div className="projectimg">
+                  <Image src={aboutimg} alt="projectimg" className="h-[30rem] w-[25rem] rounded-3xl object-cover shadow-lg shadow-[#17171772]" />
+                </div>
+              </div>
+              <div className="projecttxtbox mt-16 -ml-32 z-10">
+                <div className="projectdesc bg-white dark:bg-[#171717] rounded-3xl px-5 py-10 shadow-md dark:shadow-zinc-800 min-h-[20rem] w-[28rem]">
+                  <h1 className="font-altoneBold text-2xl">Project 3</h1>
+                  <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, corrupti! Reprehenderit esse officiis ex veritatis, quo qui eius porro aliquam in distinctio nulla repellendus eos, necessitatibus eveniet laborum ratione neque.
+                  </p>
+                  <Button variant="outline" size="default" className="rounded-2xl bg-blue-800 hover:bg-blue-500 text-[#f9f9f9] hover:text-black">
+                    <ChevronRight className="inline-block hover:text-black"/>
+                    <span className=" pl-2 font-altoneReg">View Project</span>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </section>
+        <section id="contact">
+          <div className="contact px-64 py-28">
+            <div className="contactcont items-center justify-center grid-cols-2">
+              <div className="contactcnt">
+                <h1 className="font-altoneBold text-1xl text-blue-700">CONTACT DETAILS</h1>
+                <h2 className="font-altoneBold text-3xl">Get in touch with me!👇</h2>
+              </div>
+              <div className="contacticontxtcont pt-12 flex flex-wrap gap-10 grid-cols-2">
+                <div className="contacticontxt flex">
+                  <Button size="icon" className="text-blue-700 shadow-gray-300 shadow-sm rounded-full">
+                   <Mail />
+                  </Button>
+                  <div className="px-3">
+                   <h1 className="font-altoneBold text-lg">Mail</h1>
+                   <p className="font-altoneReg text-[#7F7F7F]"><a href='mailto:jericquilantang87@gmail.com'>jericquilantang87@gmail.com</a></p>
+                  </div>
+                </div>
+                <div className="contacticontxt flex">
+                 <Button size="icon" className="text-blue-700 shadow-gray-300 shadow-sm rounded-full">
+                    <PhoneCall />
+                  </Button>
+                 <div className="px-3">
+                   <h1 className="font-altoneBold text-lg">Phone</h1>
+                    <p className="font-altoneReg text-[#7F7F7F]"><a href='tel:639614916962'>+63 961 491 6962</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </Layout>
+    </>
   );
 }
