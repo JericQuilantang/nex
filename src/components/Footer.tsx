@@ -19,6 +19,7 @@ const Footer = () => {
     display: flex;
     padding: 2.2rem 0;
     flex-wrap: wrap;
+    flex-direction: column;
   }
   footer .fttxt .ftp{
     font-size: large;

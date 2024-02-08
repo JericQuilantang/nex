@@ -158,10 +158,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="heroicon flex flex-1">
+          <div className="heroicon flex flex-1 z-[1001]">
             <div className="cont flex items-center py-20 text-lg font-semibold">
               <div className="text inline-block">
-                <p className="pr-4 inline-block font-altoneReg text-[#22ce9d]">TechstacksPH</p>
+                <p className="pr-4 inline-block font-altoneReg text-[#22ce9d]"><a href="https://techstacksph.com" target="_blank">TechstacksPH</a></p>
                 <hr className=" hidden" />
                 <div className="vline inline-block h-[20px] min-h-[1em] w-[1.5px] self-stretch bg-auto opacity-50 dark:opacity-50 align-middle">
                 </div>
@@ -188,12 +188,14 @@ export default function Home() {
         <section className="about px-64 py-28" id="about">
           <div className="abtcontainer">
             <div className="aboutcont items-center grid justify-center grid-cols-2">
-              <div className="aboutimg relative">
-                <Image src={aboutimg} alt="mainimg" width={25 * 16} height={20 * 16} className="mainimg rounded-3xl object-cover" />
-                <span className="lightwheel absolute bottom-0 right-5 transform translate-y-10">
-                  <Image src={frontendspin} alt="frontendwheel" className="frontwheel h-[180px] w-[180px] rounded-full" />
-                </span>
-                <Image src={laptopimg} alt="laptopimg" className="laptopimg absolute bottom-5 right-20 h-[60px] w-[60px] object-cover" />
+              <div className="aboutimg flex">
+                <div className="relative">
+                  <Image src={aboutimg} alt="mainimg" width={25 * 16} height={20 * 16} className="mainimg rounded-3xl object-cover" />
+                  <span className="lightwheel absolute -bottom-5 -right-16 transform translate-y-10">
+                    <Image src={frontendspin} alt="frontendwheel" className="frontwheel h-[180px] w-[180px] rounded-full" />
+                  </span>
+                  <Image src={laptopimg} alt="laptopimg" className="laptopimg absolute bottom-0 -right-[0.15rem] h-[60px] w-[60px] object-cover" />
+                </div>
               </div>
               <div className="aboutcnt">
                 <h1 className="font-altoneBold text-1xl text-blue-700">ABOUT ME</h1>
@@ -214,7 +216,7 @@ export default function Home() {
             <div className="projectgrid flex flex-1 py-10 justify-center">
               <div className="projectcard">
                 <div className="projectimg">
-                  <Image src={aboutimg} alt="projectimg" className="h-[30rem] w-[25rem] object-cover shadow-lg shadow-[#17171772]" />
+                  <Image src={aboutimg} alt="projectimg" className="object-cover shadow-lg shadow-[#17171772]" />
                 </div>
               </div>
               <div className="projecttxtbox mt-16 -ml-32 z-10">
@@ -245,14 +247,14 @@ export default function Home() {
               </div>
               <div className="projectcard">
                 <div className="projectimg">
-                  <Image src={aboutimg} alt="projectimg" className="h-[30rem] w-[25rem] rounded-3xl object-cover shadow-lg shadow-[#17171772]" />
+                  <Image src={aboutimg} alt="projectimg" className="rounded-3xl object-cover shadow-lg shadow-[#17171772]" />
                 </div>
               </div>
             </div>
             <div className="projectgrid flex flex-1 py-10 justify-center">
               <div className="projectcard">
                 <div className="projectimg">
-                  <Image src={aboutimg} alt="projectimg" className="h-[30rem] w-[25rem] rounded-3xl object-cover shadow-lg shadow-[#17171772]" />
+                  <Image src={aboutimg} alt="projectimg" className="rounded-3xl object-cover shadow-lg shadow-[#17171772]" />
                 </div>
               </div>
               <div className="projecttxtbox mt-16 -ml-32 z-10">

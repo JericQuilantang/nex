@@ -80,10 +80,10 @@ const Navbar = () => {
             flex-direction: column;
             position: fixed;
             width: 100%;
-            height: 100v;
+            height: 100vh;
             left: 0;
             right: 0;
-            top: 80px;
+            top: 84px;
             padding: 0;
             margin: 0;
             font-size: 2.5rem;

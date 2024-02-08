@@ -14,7 +14,13 @@
   src: url('../../public/fonts/PublicaSans-Regular.ttf');
 }
 /* DESKTOP VIEW */
-@media (min-width: 768px){
+@media (min-width: 1223px){
+  .projectscont .projectgrid .projectcard .projectimg img {
+    @apply h-[30rem] w-[25rem];
+ }
+
+}
+@media (min-width: 767px){
   .hero{
     height: 100vh;
   }
@@ -23,8 +29,111 @@
     width: 25rem;
   }
 }
+/* TABLET VIEW */
+@media (min-width: 767px) and (max-width: 1223px) {
+  .hero{
+    padding: 8rem 2rem;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    gap: 6em;
+    height: auto;
+  }
+  .hero .herocont{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 3.5rem;
+  }
+  .hero .herocont .heroconttxt{
+    height: auto;
+    width: auto;
+  }
+  .hero .p .morph{
+    height: 17.5em;
+    width: 17.5em;
+  }
+  .hero .herocont h1{
+    font-size: 2.8rem;
+  }
+  .hero .herocont p{
+    font-size: 1rem;
+    margin-left: 1.8rem;
+    margin-right: 1.8rem;
+  }
+  .hero .heroicon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+  .hero .heroicon .cont .text p{
+    padding: 0;
+  }
+  .hero .heroicon .cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 1rem;
+  }
+  .hero .heroicon .cont .vline{
+    display: none;
+  }
+  .hero .heroicon .cont hr{
+    display: flex;
+  }
+  .light .hero .heroicon .cont hr{
+    background-color: black;
+  }
+  .hero .heroicon .logos{
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+   }
+   .about{
+    padding: 6rem 2rem;
+   }
+   .about .abtcontainer .aboutcont{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+   }
+   .mainimg{
+    height: auto;
+    width: auto;
+   }
+   .frontwheel, .laptopimg{
+    display: none;
+
+   }
+   .about .abtcontainer .aboutcont .aboutcnt h1{
+    padding: 0.5rem;
+   }
+   .about .abtcontainer .aboutcont .aboutcnt button{
+    font-size: large;
+   }
+   .projects{
+    padding: 6rem 2rem;
+   }
+   .contact{
+    padding: 3rem 2rem;
+   }
+   footer .fttxt{
+    padding: 1rem 2rem;
+   }
+   .projectscont .projectgrid .projectcard .projectimg img {
+    @apply h-[30rem] w-[25rem];
+ }
+
+  }
 /* MOBILE VIEW */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   html, body{
     width: 100%;
     height: 100%;
@@ -65,6 +174,13 @@
     font-size: 1rem;
     margin-left: 1.8rem;
     margin-right: 1.8rem;
+  }
+  .hero .heroicon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
   }
   .hero .heroicon .cont .text p{
     padding: 0;
@@ -122,6 +238,9 @@
     display: flex;
     flex-direction: column;
    }
+   .projectscont .projectgrid .projectcard .projectimg img {
+    @apply h-[30rem] w-full;
+ }
    .projects .projectscont .projectgrid .projecttxtbox{
     margin: 0;
     align-items: center;
@@ -178,8 +297,6 @@
    .contact .contactcont .contacticontxtcont .contacticontxt p{
     font-size: large;
    }
- 
-
 }
 :root {
     --nav-background-light: #f9f9f9;
