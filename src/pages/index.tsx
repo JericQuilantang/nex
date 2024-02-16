@@ -19,14 +19,14 @@ import laptopimg from "../assets/laptop.png";
 import frontendspin from "../assets/frontend.svg";
 import Image from "next/image";
 import { Link } from "react-scroll";
-import { Reveal } from "@/components/Reveal";
-import { RevealImg } from "@/components/RevealIMG";
+import { Fade } from "react-awesome-reveal";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <>
+      <title>Jeric.dev</title>
       <meta
         name="viewport"
         content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0"
@@ -149,94 +149,114 @@ export default function Home() {
           <div className="wave wave4"></div>
           <div className="herocont flex justify-between">
             <div className="heroconttxt h-auto w-[28rem]">
-              <h1 className="font-altoneBold text-6xl">
-                Front-End Next Developer{" "}
-                <Image
-                  src={waving}
-                  alt="👋🏻"
-                  width={56}
-                  height={56}
-                  className="h-14 w-14 inline-block"
-                />
-              </h1>
-
-              <p className="py-4 text-lg font-altoneReg">
-                Hi, I'm Jeric Ivan. A passionate Front-end Developer based in
-                Cabanatuan City, Nueva Ecija. 📍
-              </p>
-
-              <Button variant="default" size="icon">
-                <a
-                  href="https://www.linkedin.com/in/jeric-quilantang-a86508288/"
-                  target="_blank"
-                >
-                  <LinkedinIcon className=" hover:text-blue-500" />
-                </a>
-              </Button>
-              <Button variant="default" size="icon">
-                <a href="https://github.com/JericQuilantang" target="_blank">
-                  <GithubIcon className=" hover:text-blue-500" />
-                </a>
-              </Button>
+              <Fade direction="down" triggerOnce>
+                <h1 className="font-altoneBold text-6xl">
+                  Front-End Next Developer{" "}
+                  <Image
+                    src={waving}
+                    alt="👋🏻"
+                    width={56}
+                    height={56}
+                    className="h-14 w-14 inline-block"
+                  />
+                </h1>
+              </Fade>
+              <Fade triggerOnce={true}>
+                <p className="py-4 text-lg font-altoneReg">
+                  Hi, I'm Jeric Ivan. A passionate Front-end Developer based in
+                  Cabanatuan City, Nueva Ecija. 📍
+                </p>
+              </Fade>
+              <Fade direction="up" triggerOnce>
+                <div className="button-container">
+                  <Button variant="default" size="icon">
+                    <a
+                      href="https://www.linkedin.com/in/jeric-quilantang-a86508288/"
+                      target="_blank"
+                    >
+                      <LinkedinIcon className="hover:text-blue-500" />
+                    </a>
+                  </Button>
+                  <Button variant="default" size="icon">
+                    <a
+                      href="https://github.com/JericQuilantang"
+                      target="_blank"
+                    >
+                      <GithubIcon className="hover:text-blue-500" />
+                    </a>
+                  </Button>
+                </div>
+              </Fade>
             </div>
             <div className="p">
-              <div className="morph border-black">
-                <Image
-                  src={portrait}
-                  alt="portrait"
-                  width={500}
-                  height={500}
-                  className="object-cover h-80 w-80"
-                />
-              </div>
+              <Fade delay={300} triggerOnce>
+                <div className="morph border-black">
+                  <Image
+                    src={portrait}
+                    alt="portrait"
+                    width={500}
+                    height={500}
+                    className="object-cover h-80 w-80"
+                  />
+                </div>
+              </Fade>
             </div>
           </div>
           <div className="heroicon flex flex-1 z-[1001]">
             <div className="cont flex items-center py-20 text-lg font-semibold">
-              <div className="text inline-block">
-                <p className="pr-4 inline-block font-altoneReg text-[#22ce9d]">
-                  <a href="https://techstacksph.com" target="_blank">
-                    TechstacksPH
-                  </a>
-                </p>
-                <hr className=" hidden" />
-                <div className="vline inline-block h-[20px] min-h-[1em] w-[1.5px] self-stretch bg-auto opacity-50 dark:opacity-50 align-middle"></div>
-              </div>
-
+              <Fade triggerOnce>
+                <div className="text inline-block">
+                  <p className="pr-4 inline-block font-altoneReg text-[#22ce9d]">
+                    <a href="https://techstacksph.com" target="_blank">
+                      TechstacksPH
+                    </a>
+                  </p>
+                  <hr className=" hidden" />
+                  <div className="vline inline-block h-[20px] min-h-[1em] w-[1.5px] self-stretch bg-auto opacity-50 dark:opacity-50 align-middle"></div>
+                </div>
+              </Fade>
               <div className="logos inline-block pl-14">
-                <ul className="flex flex-wrap gap-8 list-none justify-center">
-                  <li>
-                    <Image
-                      src={icon1}
-                      alt="icon1"
-                      className="hover:animate-bounce hover:cursor-pointer"
-                    />
-                  </li>
+                <Fade
+                  direction="left"
+                  delay={200}
+                  cascade
+                  damping={0.15}
+                  triggerOnce
+                >
+                  <ul className="flex flex-wrap gap-8 list-none justify-center">
+                    <li>
+                      <Image
+                        src={icon1}
+                        alt="icon1"
+                        className="hover:animate-bounce hover:cursor-pointer"
+                      />
+                    </li>
 
-                  <li>
-                    <Image
-                      src={icon2}
-                      alt="icon2"
-                      className="hover:animate-bounce hover:cursor-pointer"
-                    />
-                  </li>
+                    <li>
+                      <Image
+                        src={icon2}
+                        alt="icon2"
+                        className="hover:animate-bounce hover:cursor-pointer"
+                      />
+                    </li>
 
-                  <li>
-                    <Image
-                      src={icon3}
-                      alt="icon3"
-                      className="hover:animate-bounce hover:cursor-pointer"
-                    />
-                  </li>
+                    <li>
+                      <Image
+                        src={icon3}
+                        alt="icon3"
+                        className="hover:animate-bounce hover:cursor-pointer"
+                      />
+                    </li>
 
-                  <li>
-                    <Image
-                      src={icon4}
-                      alt="icon4"
-                      className="hover:animate-bounce hover:cursor-pointer"
-                    />
-                  </li>
-                </ul>
+                    <li>
+                      <Image
+                        src={icon4}
+                        alt="icon4"
+                        className="hover:animate-bounce hover:cursor-pointer"
+                      />
+                    </li>
+                  </ul>
+                </Fade>
               </div>
             </div>
           </div>
@@ -245,56 +265,60 @@ export default function Home() {
           <div className="abtcontainer">
             <div className="aboutcont items-center grid justify-center grid-cols-2">
               <div className="aboutimg flex">
-                <div className="relative">
-                  <Image
-                    src={aboutimg}
-                    alt="mainimg"
-                    width={25 * 16}
-                    height={20 * 16}
-                    className="mainimg rounded-3xl object-cover"
-                  />
-                  <span className="lightwheel absolute -bottom-5 -right-16 transform translate-y-10">
+                <Fade triggerOnce>
+                  <div className="relative">
                     <Image
-                      src={frontendspin}
-                      alt="frontendwheel"
-                      className="frontwheel h-[180px] w-[180px] rounded-full"
+                      src={aboutimg}
+                      alt="mainimg"
+                      width={25 * 16}
+                      height={20 * 16}
+                      className="mainimg rounded-3xl object-cover"
                     />
-                  </span>
-                  <Image
-                    src={laptopimg}
-                    alt="laptopimg"
-                    className="laptopimg absolute bottom-0 -right-[0.15rem] h-[60px] w-[60px] object-cover"
-                  />
-                </div>
+                    <span className="lightwheel absolute -bottom-5 -right-16 transform translate-y-10">
+                      <Image
+                        src={frontendspin}
+                        alt="frontendwheel"
+                        className="frontwheel h-[180px] w-[180px] rounded-full"
+                      />
+                    </span>
+                    <Image
+                      src={laptopimg}
+                      alt="laptopimg"
+                      className="laptopimg absolute bottom-0 -right-[0.15rem] h-[60px] w-[60px] object-cover"
+                    />
+                  </div>
+                </Fade>
               </div>
               <div className="aboutcnt">
-                <h1 className="font-altoneBold text-1xl text-blue-700">
-                  ABOUT ME
-                </h1>
+                <Fade direction="right" cascade damping={0.1} triggerOnce>
+                  <h1 className="font-altoneBold text-1xl text-blue-700">
+                    ABOUT ME
+                  </h1>
 
-                <h1 className="font-altoneBold text-2xl">
-                  Front-end Developer based in Nueva Ecija, PH 📍
-                </h1>
+                  <h1 className="font-altoneBold text-2xl">
+                    Front-end Developer based in Nueva Ecija, PH 📍
+                  </h1>
 
-                <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
-                  I like CSS styling. I love video and photo editing and
-                  developing dynamic, intuitive user experiences.
-                </p>
+                  <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
+                    I like CSS styling. I love video and photo editing and
+                    developing dynamic, intuitive user experiences.
+                  </p>
 
-                <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
-                  My main stack currently is React/Next.js in combination with
-                  Tailwind CSS and TypeScript.
-                </p>
+                  <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
+                    My main stack currently is React/Next.js in combination with
+                    Tailwind CSS and TypeScript.
+                  </p>
 
-                <Button variant="link" size="default">
-                  <ChevronRight className="inline-block" />
-                  <span className="pl-2 font-altoneReg">
-                    <a href="/cv/CV.pdf" target="_blank">
-                      {" "}
-                      Download CV
-                    </a>
-                  </span>
-                </Button>
+                  <Button variant="link" size="default">
+                    <ChevronRight className="inline-block" />
+                    <span className="pl-2 font-altoneReg">
+                      <a href="/cv/CV.pdf" target="_blank">
+                        {" "}
+                        Download CV
+                      </a>
+                    </span>
+                  </Button>
+                </Fade>
               </div>
             </div>
           </div>
@@ -305,106 +329,118 @@ export default function Home() {
           </h1>
           <div className="projectscont">
             <div className="projectgrid flex flex-1 py-10 justify-center">
-              <div className="projectcard">
-                <div className="projectimg">
-                  <Image
-                    src={aboutimg}
-                    alt="projectimg"
-                    className="object-cover shadow-lg shadow-[#17171772]"
-                  />
+              <Fade delay={150} triggerOnce>
+                <div className="projectcard">
+                  <div className="projectimg">
+                    <Image
+                      src={aboutimg}
+                      alt="projectimg"
+                      className="object-cover shadow-lg shadow-[#17171772]"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="projecttxtbox mt-16 -ml-32 z-10">
-                <div className="projectdesc bg-white dark:bg-[#171717] rounded-3xl px-5 py-10 shadow-md dark:shadow-zinc-800 min-h-[20rem] w-[28rem]">
-                  <h1 className="font-altoneBold text-2xl">Project 1</h1>
+              </Fade>
+              <Fade direction="right" delay={300} triggerOnce>
+                <div className="projecttxtbox mt-16 -ml-32 z-10">
+                  <div className="projectdesc bg-white dark:bg-[#171717] rounded-3xl px-5 py-10 shadow-md dark:shadow-zinc-800 min-h-[20rem] w-[28rem]">
+                    <h1 className="font-altoneBold text-2xl">Project 1</h1>
 
-                  <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Provident, corrupti! Reprehenderit esse officiis ex
-                    veritatis, quo qui eius porro aliquam in distinctio nulla
-                    repellendus eos, necessitatibus eveniet laborum ratione
-                    neque.
-                  </p>
+                    <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Provident, corrupti! Reprehenderit esse officiis ex
+                      veritatis, quo qui eius porro aliquam in distinctio nulla
+                      repellendus eos, necessitatibus eveniet laborum ratione
+                      neque.
+                    </p>
 
-                  <Button
-                    variant="outline"
-                    size="default"
-                    className="rounded-2xl bg-blue-800 hover:bg-blue-500 text-[#f9f9f9] hover:text-black"
-                  >
-                    <ChevronRight className="inline-block hover:text-black" />
+                    <Button
+                      variant="outline"
+                      size="default"
+                      className="rounded-2xl bg-blue-800 hover:bg-blue-500 text-[#f9f9f9] hover:text-black"
+                    >
+                      <ChevronRight className="inline-block hover:text-black" />
 
-                    <span className=" pl-2 font-altoneReg">View Project</span>
-                  </Button>
+                      <span className=" pl-2 font-altoneReg">View Project</span>
+                    </Button>
+                  </div>
                 </div>
-              </div>
+              </Fade>
             </div>
             <div className="projectgrid rev flex flex-1 py-10 justify-center">
-              <div className="projecttxtbox mt-16 -mr-32 z-10">
-                <div className="projectdesc bg-white dark:bg-[#171717] rounded-3xl px-5 py-10 shadow-md dark:shadow-zinc-800 min-h-[20rem] w-[28rem]">
-                  <h1 className="font-altoneBold text-2xl">Project 2</h1>
+              <Fade direction="left" delay={300} triggerOnce className="z-10">
+                <div className="projecttxtbox mt-16 -mr-32">
+                  <div className="projectdesc bg-white dark:bg-[#171717] rounded-3xl px-5 py-10 shadow-md dark:shadow-zinc-800 min-h-[20rem] w-[28rem]">
+                    <h1 className="font-altoneBold text-2xl">Project 2</h1>
 
-                  <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Provident, corrupti! Reprehenderit esse officiis ex
-                    veritatis, quo qui eius porro aliquam in distinctio nulla
-                    repellendus eos, necessitatibus eveniet laborum ratione
-                    neque.
-                  </p>
+                    <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Provident, corrupti! Reprehenderit esse officiis ex
+                      veritatis, quo qui eius porro aliquam in distinctio nulla
+                      repellendus eos, necessitatibus eveniet laborum ratione
+                      neque.
+                    </p>
 
-                  <Button
-                    variant="outline"
-                    size="default"
-                    className="rounded-2xl bg-blue-800 hover:bg-blue-500 text-[#f9f9f9] hover:text-black"
-                  >
-                    <ChevronRight className="inline-block hover:text-black" />
+                    <Button
+                      variant="outline"
+                      size="default"
+                      className="rounded-2xl bg-blue-800 hover:bg-blue-500 text-[#f9f9f9] hover:text-black"
+                    >
+                      <ChevronRight className="inline-block hover:text-black" />
 
-                    <span className=" pl-2 font-altoneReg">View Project</span>
-                  </Button>
+                      <span className=" pl-2 font-altoneReg">View Project</span>
+                    </Button>
+                  </div>
                 </div>
-              </div>
-              <div className="projectcard">
-                <div className="projectimg">
-                  <Image
-                    src={aboutimg}
-                    alt="projectimg"
-                    className="rounded-3xl object-cover shadow-lg shadow-[#17171772]"
-                  />
+              </Fade>
+              <Fade delay={150} triggerOnce>
+                <div className="projectcard">
+                  <div className="projectimg">
+                    <Image
+                      src={aboutimg}
+                      alt="projectimg"
+                      className="rounded-3xl object-cover shadow-lg shadow-[#17171772]"
+                    />
+                  </div>
                 </div>
-              </div>
+              </Fade>
             </div>
             <div className="projectgrid flex flex-1 py-10 justify-center">
-              <div className="projectcard">
-                <div className="projectimg">
-                  <Image
-                    src={aboutimg}
-                    alt="projectimg"
-                    className="rounded-3xl object-cover shadow-lg shadow-[#17171772]"
-                  />
+              <Fade delay={150} triggerOnce>
+                <div className="projectcard">
+                  <div className="projectimg">
+                    <Image
+                      src={aboutimg}
+                      alt="projectimg"
+                      className="rounded-3xl object-cover shadow-lg shadow-[#17171772]"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="projecttxtbox mt-16 -ml-32 z-10">
-                <div className="projectdesc bg-white dark:bg-[#171717] rounded-3xl px-5 py-10 shadow-md dark:shadow-zinc-800 min-h-[20rem] w-[28rem]">
-                  <h1 className="font-altoneBold text-2xl">Project 3</h1>
+              </Fade>
+              <Fade direction="right" delay={300} triggerOnce>
+                <div className="projecttxtbox mt-16 -ml-32 z-10">
+                  <div className="projectdesc bg-white dark:bg-[#171717] rounded-3xl px-5 py-10 shadow-md dark:shadow-zinc-800 min-h-[20rem] w-[28rem]">
+                    <h1 className="font-altoneBold text-2xl">Project 3</h1>
 
-                  <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Provident, corrupti! Reprehenderit esse officiis ex
-                    veritatis, quo qui eius porro aliquam in distinctio nulla
-                    repellendus eos, necessitatibus eveniet laborum ratione
-                    neque.
-                  </p>
+                    <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Provident, corrupti! Reprehenderit esse officiis ex
+                      veritatis, quo qui eius porro aliquam in distinctio nulla
+                      repellendus eos, necessitatibus eveniet laborum ratione
+                      neque.
+                    </p>
 
-                  <Button
-                    variant="outline"
-                    size="default"
-                    className="rounded-2xl bg-blue-800 hover:bg-blue-500 text-[#f9f9f9] hover:text-black"
-                  >
-                    <ChevronRight className="inline-block hover:text-black" />
+                    <Button
+                      variant="outline"
+                      size="default"
+                      className="rounded-2xl bg-blue-800 hover:bg-blue-500 text-[#f9f9f9] hover:text-black"
+                    >
+                      <ChevronRight className="inline-block hover:text-black" />
 
-                    <span className=" pl-2 font-altoneReg">View Project</span>
-                  </Button>
+                      <span className=" pl-2 font-altoneReg">View Project</span>
+                    </Button>
+                  </div>
                 </div>
-              </div>
+              </Fade>
             </div>
           </div>
         </section>
@@ -412,47 +448,52 @@ export default function Home() {
           <div className="contact px-64 py-28">
             <div className="contactcont items-center justify-center grid-cols-2">
               <div className="contactcnt">
-                <h1 className="font-altoneBold text-1xl text-blue-700">
-                  CONTACT DETAILS
-                </h1>
-
-                <h2 className="font-altoneBold text-3xl">
-                  Get in touch with me!👇
-                </h2>
+                <Fade direction="down" triggerOnce>
+                  <h1 className="font-altoneBold text-1xl text-blue-700">
+                    CONTACT DETAILS
+                  </h1>
+                </Fade>
+                <Fade direction="up" triggerOnce>
+                  <h2 className="font-altoneBold text-3xl">
+                    Get in touch with me!👇
+                  </h2>
+                </Fade>
               </div>
               <div className="contacticontxtcont pt-12 flex flex-wrap gap-10 grid-cols-2">
-                <div className="contacticontxt flex">
-                  <Button
-                    size="icon"
-                    className="text-blue-700 shadow-gray-300 shadow-sm rounded-full"
-                  >
-                    <Mail />
-                  </Button>
-                  <div className="px-3">
-                    <h1 className="font-altoneBold text-lg">Mail</h1>
+                <Fade cascade damping={0.15} triggerOnce>
+                  <div className="contacticontxt flex">
+                    <Button
+                      size="icon"
+                      className="text-blue-700 shadow-gray-300 shadow-sm rounded-full"
+                    >
+                      <Mail />
+                    </Button>
+                    <div className="px-3">
+                      <h1 className="font-altoneBold text-lg">Mail</h1>
 
-                    <p className="font-altoneReg text-[#7F7F7F]">
-                      <a href="mailto:jericquilantang87@gmail.com">
-                        jericquilantang87@gmail.com
-                      </a>
-                    </p>
+                      <p className="font-altoneReg text-[#7F7F7F]">
+                        <a href="mailto:jericquilantang87@gmail.com">
+                          jericquilantang87@gmail.com
+                        </a>
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="contacticontxt flex">
-                  <Button
-                    size="icon"
-                    className="text-blue-700 shadow-gray-300 shadow-sm rounded-full"
-                  >
-                    <PhoneCall />
-                  </Button>
-                  <div className="px-3">
-                    <h1 className="font-altoneBold text-lg">Phone</h1>
+                  <div className="contacticontxt flex">
+                    <Button
+                      size="icon"
+                      className="text-blue-700 shadow-gray-300 shadow-sm rounded-full"
+                    >
+                      <PhoneCall />
+                    </Button>
+                    <div className="px-3">
+                      <h1 className="font-altoneBold text-lg">Phone</h1>
 
-                    <p className="font-altoneReg text-[#7F7F7F]">
-                      <a href="tel:639614916962">+63 961 491 6962</a>
-                    </p>
+                      <p className="font-altoneReg text-[#7F7F7F]">
+                        <a href="tel:639614916962">+63 961 491 6962</a>
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </Fade>
               </div>
             </div>
           </div>

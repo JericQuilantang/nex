@@ -1,12 +1,13 @@
-import React from 'react'
-import { Button } from './ui/button'
-import { LinkedinIcon, GithubIcon } from 'lucide-react'
+import React from "react";
+import { Button } from "./ui/button";
+import { LinkedinIcon, GithubIcon } from "lucide-react";
+import { Fade } from "react-awesome-reveal";
 
 const Footer = () => {
   return (
     <>
-    <style>
-      {`
+      <style>
+        {`
 @media (max-width: 768px) {
   footer{
     padding: 0;
@@ -40,28 +41,34 @@ const Footer = () => {
 }
       `}
       </style>
-    <footer>
-        <div className='fttxt bg-navColor font-extrabold text-lg px-60 py-[30px] font-altoneBold flex justify-between items-center'>
-          <div className='ftp text-white'>
-            Copyright © 2024. All rights are reserved
-          </div>
-
-            <div className='ficon flex gap-2 py-5 justify-end' >
-               <Button variant="default" size="icon">
-                <a href="https://www.linkedin.com/in/jeric-quilantang-a86508288/" target="_blank">
+      <footer>
+        <div className="fttxt bg-navColor font-extrabold text-lg px-60 py-[30px] font-altoneBold flex justify-between items-center">
+          <Fade triggerOnce>
+            <div className="ftp text-white">
+              Copyright © 2024. All rights are reserved
+            </div>
+          </Fade>
+          <div className="ficon flex gap-2 py-5 justify-end">
+            <Fade cascade damping={0.15} triggerOnce>
+              <Button variant="default" size="icon">
+                <a
+                  href="https://www.linkedin.com/in/jeric-quilantang-a86508288/"
+                  target="_blank"
+                >
                   <LinkedinIcon className="text-white hover:text-blue-500" />
                 </a>
-               </Button>
-               <Button variant="default" size="icon">
-               <a href="https://github.com/JericQuilantang" target="_blank">
-                 <GithubIcon className="text-white hover:text-blue-500"/>
+              </Button>
+              <Button variant="default" size="icon">
+                <a href="https://github.com/JericQuilantang" target="_blank">
+                  <GithubIcon className="text-white hover:text-blue-500" />
                 </a>
-               </Button>
-            </div>
+              </Button>
+            </Fade>
+          </div>
         </div>
-    </footer>
+      </footer>
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

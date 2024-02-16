@@ -1,30 +1,31 @@
 "use client";
-import Link from 'next/link'
-import React from 'react'
-import { Button } from './ui/button'
-import { NavItems } from '@/constants/Nav'
-import { ModeToggle } from './ui/toggle-mode'
-import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
-import { Menu, X } from 'lucide-react'
-import { useState } from 'react';
+import Link from "next/link";
+import React from "react";
+import { Button } from "./ui/button";
+import { NavItems } from "@/constants/Nav";
+import { ModeToggle } from "./ui/toggle-mode";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import { Fade } from "react-awesome-reveal";
 
 const Navbar = () => {
   const scrollToTop = () => {
     scroll.scrollToTop({
       duration: 1000,
-      smooth: 'easeInOutQuart',
+      smooth: "easeInOutQuart",
     });
   };
 
   const [showNavigation, setShowNavigation] = useState(false);
-  
-  function handleNav(){
-    setShowNavigation(!showNavigation)
+
+  function handleNav() {
+    setShowNavigation(!showNavigation);
   }
 
   return (
     <>
-    <style>{`
+      <style>{`
       nav {
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
         position: fixed;
@@ -126,56 +127,112 @@ const Navbar = () => {
           
         }
       `}</style>
-    <nav>
-      <div className='navtext flex justify-between items-center'>
-        <div className='font-extrabold text-xl px-12 py-7 font-altoneBold hover:cursor-pointer hover:animate-pulse' >
-          <ScrollLink to="hero" smooth={true} duration={1000}>Jeric.dev</ScrollLink>
-        </div>
-        <div className="desktopNav" >
-          <div className={`navCont flex gap-2 px-12 py-5 font-altoneReg items-center ${showNavigation ? "showNav" : "hideNav"}`}>
-            <li>
-              <ScrollLink to="hero" smooth={true} duration={1000} onClick={handleNav}>        
-                <Button variant={"link"} className='buttColor font-bold text-lg'>Home</Button>
+      <nav>
+        <div className="navtext flex justify-between items-center">
+          <div className="font-extrabold text-xl px-12 py-7 font-altoneBold hover:cursor-pointer hover:animate-pulse">
+            <Fade triggerOnce>
+              <ScrollLink to="hero" smooth={true} duration={1000}>
+                Jeric.dev
               </ScrollLink>
-            </li>
-            <li>
-              <ScrollLink to="about" smooth={true} duration={1000} onClick={handleNav}>        
-                <Button variant={"link"} className='buttColor font-bold text-lg'>About</Button>
-              </ScrollLink>
-            </li>     
-            <li>
-              <ScrollLink to="projects" smooth={true} duration={1000} onClick={handleNav}>        
-                <Button variant={"link"} className='buttColor font-bold text-lg'>Projects</Button>
-              </ScrollLink>
-            </li>
-            <li>
-              <ScrollLink to="contact" smooth={true} duration={1000} onClick={handleNav}>        
-                <Button variant={"link"} className='buttColor font-bold text-lg'>Contact</Button>
-              </ScrollLink>
-            </li>
-            <li>
+            </Fade>
+          </div>
+          <div className="desktopNav">
+            <div
+              className={`navCont flex gap-2 px-12 py-5 font-altoneReg items-center ${
+                showNavigation ? "showNav" : "hideNav"
+              }`}
+            >
+              <Fade cascade damping={0.2} triggerOnce>
+                <li>
+                  <ScrollLink
+                    to="hero"
+                    smooth={true}
+                    duration={1000}
+                    onClick={handleNav}
+                  >
+                    <Button
+                      variant={"link"}
+                      className="buttColor font-bold text-lg"
+                    >
+                      Home
+                    </Button>
+                  </ScrollLink>
+                </li>
+                <li>
+                  <ScrollLink
+                    to="about"
+                    smooth={true}
+                    duration={1000}
+                    onClick={handleNav}
+                  >
+                    <Button
+                      variant={"link"}
+                      className="buttColor font-bold text-lg"
+                    >
+                      About
+                    </Button>
+                  </ScrollLink>
+                </li>
+                <li>
+                  <ScrollLink
+                    to="projects"
+                    smooth={true}
+                    duration={1000}
+                    onClick={handleNav}
+                  >
+                    <Button
+                      variant={"link"}
+                      className="buttColor font-bold text-lg"
+                    >
+                      Projects
+                    </Button>
+                  </ScrollLink>
+                </li>
+                <li>
+                  <ScrollLink
+                    to="contact"
+                    smooth={true}
+                    duration={1000}
+                    onClick={handleNav}
+                  >
+                    <Button
+                      variant={"link"}
+                      className="buttColor font-bold text-lg"
+                    >
+                      Contact
+                    </Button>
+                  </ScrollLink>
+                </li>
+                <li>
+                  <ModeToggle />
+                </li>
+                <li>Copyright © 2024. All rights reserved</li>
+              </Fade>
+            </div>
+          </div>
+          <div className="mobileNav">
+            <li className="inline-flex items-center px-4 py-2 h-20 w-20">
               <ModeToggle />
             </li>
             <li>
-              Copyright © 2024. All rights reserved
+              <Button
+                variant={"default"}
+                className="h-20 w-20"
+                data-collapse-toggle="navbar-default"
+                onClick={handleNav}
+              >
+                {showNavigation ? (
+                  <X className="h-8 w-8" />
+                ) : (
+                  <Menu className="h-8 w-8" />
+                )}
+              </Button>
             </li>
           </div>
         </div>
-        <div className="mobileNav">
-          <li className='inline-flex items-center px-4 py-2 h-20 w-20'>
-            <ModeToggle />
-          </li>
-          <li>
-          <Button variant={"default"} className='h-20 w-20' data-collapse-toggle="navbar-default" onClick={handleNav}>
-            {showNavigation ? <X className='h-8 w-8'/> : <Menu className='h-8 w-8'/>}
-          </Button>
-          </li>
-        </div>
-      </div>
-    </nav>
-    
+      </nav>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
