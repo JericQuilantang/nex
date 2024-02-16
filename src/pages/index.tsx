@@ -161,10 +161,10 @@ export default function Home() {
                   />
                 </h1>
               </Fade>
-              <Fade triggerOnce={true}>
+              <Fade triggerOnce>
                 <p className="py-4 text-lg font-altoneReg">
-                  Hi, I'm Jeric Ivan. A passionate Front-end Developer based in
-                  Cabanatuan City, Nueva Ecija. 📍
+                  Hi, I&apos;m Jeric Ivan. A passionate Front-end Developer
+                  based in Cabanatuan City, Nueva Ecija. 📍
                 </p>
               </Fade>
               <Fade direction="up" triggerOnce>
