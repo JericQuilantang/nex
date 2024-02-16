@@ -45,9 +45,6 @@ export default function Home() {
             animation: morphing 10s infinite;
             overflow: hidden;
           }
-          .morph:hover {
-            animation-play-state: paused;
-          }
           @keyframes morphing_dark {
             0% {
                 border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
