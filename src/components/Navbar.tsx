@@ -57,6 +57,9 @@ const Navbar = () => {
         .mobileNav{
           display: none;
         }
+        .navCont li:last-child{
+          display: none;
+        }
         @media (max-width: 768px) {
           .desktopNav{
             // display: none;
@@ -97,8 +100,19 @@ const Navbar = () => {
               width: 100%;
               text-align: center;
             }
-            li:last-child{
+            li:nth-child(5){
               visibility: hidden;
+            }
+            li:last-child{
+              position: absolute;
+              bottom: 6rem;
+              width: 100%;
+              text-align: center;
+              font-size: 0.8rem;
+              display: block;
+            }
+            p{
+              visibility: visible;
             }
           }
           .showNav{
@@ -109,6 +123,7 @@ const Navbar = () => {
           .hideNav {
             visibility: hidden;
           }
+          
         }
       `}</style>
     <nav>
@@ -140,6 +155,9 @@ const Navbar = () => {
             </li>
             <li>
               <ModeToggle />
+            </li>
+            <li>
+              Copyright © 2024. All rights reserved
             </li>
           </div>
         </div>
