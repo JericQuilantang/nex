@@ -467,7 +467,7 @@ export default function Home() {
           </div>
         </section>
         <section id="contact">
-          <div className="contact container px-64 py-28">
+          <div className="contact container px-56 py-28">
             <div className="contactcont items-center justify-center grid-cols-2">
               <div className="contactcnt">
                 <Fade direction="down" triggerOnce delay={150}>

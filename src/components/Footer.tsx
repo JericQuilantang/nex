@@ -43,7 +43,7 @@ const Footer = () => {
       </style>
       <footer>
         <div className=" bg-navColor ">
-          <div className="fttxt container font-extrabold text-lg px-60 py-[30px] font-altoneBold flex justify-between items-center">
+          <div className="fttxt container font-extrabold text-lg px-52 py-[30px] font-altoneBold flex justify-between items-center">
             <Fade triggerOnce delay={150}>
               <div className="ftp text-white">
                 Copyright © 2024. All rights are reserved
