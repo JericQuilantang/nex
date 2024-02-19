@@ -139,183 +139,189 @@ export default function Home() {
         }
           `}
         </style>
-        <section className="hero px-64 pb-28 pt-48">
+        <section className="hero">
           <div className="wave wave1"></div>
           <div className="wave wave2"></div>
           <div className="wave wave3"></div>
           <div className="wave wave4"></div>
-          <div className="herocont flex justify-between">
-            <div className="heroconttxt h-auto w-[28rem]">
-              <Fade direction="down" triggerOnce>
-                <h1 className="font-altoneBold text-6xl">
-                  Front-End Next Developer{" "}
-                  <Image
-                    src={waving}
-                    alt="👋🏻"
-                    width={56}
-                    height={56}
-                    className="h-14 w-14 inline-block"
-                  />
-                </h1>
-              </Fade>
-              <Fade triggerOnce>
-                <p className="py-4 text-lg font-altoneReg">
-                  Hi, I&apos;m Jeric Ivan. A passionate Front-end Developer
-                  based in Cabanatuan City, Nueva Ecija. 📍
-                </p>
-              </Fade>
-              <Fade direction="up" triggerOnce>
-                <div className="button-container">
-                  <Button variant="default" size="icon">
-                    <a
-                      href="https://www.linkedin.com/in/jeric-quilantang-a86508288/"
-                      target="_blank"
+          <div className="container px-64 pb-28 pt-48 z-[1001]">
+            <div className="content">
+              <div className="herocont flex justify-between">
+                <div className="heroconttxt h-auto w-[28rem]">
+                  <Fade direction="down" triggerOnce>
+                    <h1 className="font-altoneBold text-6xl">
+                      Front-End Next Developer{" "}
+                      <Image
+                        src={waving}
+                        alt="👋🏻"
+                        width={56}
+                        height={56}
+                        className="h-14 w-14 inline-block"
+                      />
+                    </h1>
+                  </Fade>
+                  <Fade triggerOnce>
+                    <p className="py-4 text-lg font-altoneReg">
+                      Hi, I&apos;m Jeric Ivan. A passionate Front-end Developer
+                      based in Cabanatuan City, Nueva Ecija. 📍
+                    </p>
+                  </Fade>
+                  <Fade direction="up" triggerOnce>
+                    <div className="button-container">
+                      <Button variant="default" size="icon">
+                        <a
+                          href="https://www.linkedin.com/in/jeric-quilantang-a86508288/"
+                          target="_blank"
+                        >
+                          <LinkedinIcon className="hover:text-blue-500" />
+                        </a>
+                      </Button>
+                      <Button variant="default" size="icon">
+                        <a
+                          href="https://github.com/JericQuilantang"
+                          target="_blank"
+                        >
+                          <GithubIcon className="hover:text-blue-500" />
+                        </a>
+                      </Button>
+                    </div>
+                  </Fade>
+                </div>
+                <div className="p">
+                  <Fade delay={300} triggerOnce>
+                    <div className="morph border-black">
+                      <Image
+                        src={portrait}
+                        alt="portrait"
+                        width={500}
+                        height={500}
+                        className="object-cover h-80 w-80"
+                      />
+                    </div>
+                  </Fade>
+                </div>
+              </div>
+              <div className="heroicon flex flex-1 z-[1001]">
+                <div className="cont flex items-center py-20 text-lg font-semibold">
+                  <Fade triggerOnce>
+                    <div className="text inline-block">
+                      <p className="pr-4 inline-block font-altoneReg text-[#22ce9d]">
+                        <a href="https://techstacksph.com" target="_blank">
+                          TechstacksPH
+                        </a>
+                      </p>
+                      <hr className=" hidden" />
+                      <div className="vline inline-block h-[20px] min-h-[1em] w-[1.5px] self-stretch bg-auto opacity-50 dark:opacity-50 align-middle"></div>
+                    </div>
+                  </Fade>
+                  <div className="logos inline-block pl-14">
+                    <Fade
+                      direction="left"
+                      delay={200}
+                      cascade
+                      damping={0.15}
+                      triggerOnce
                     >
-                      <LinkedinIcon className="hover:text-blue-500" />
-                    </a>
-                  </Button>
-                  <Button variant="default" size="icon">
-                    <a
-                      href="https://github.com/JericQuilantang"
-                      target="_blank"
-                    >
-                      <GithubIcon className="hover:text-blue-500" />
-                    </a>
-                  </Button>
-                </div>
-              </Fade>
-            </div>
-            <div className="p">
-              <Fade delay={300} triggerOnce>
-                <div className="morph border-black">
-                  <Image
-                    src={portrait}
-                    alt="portrait"
-                    width={500}
-                    height={500}
-                    className="object-cover h-80 w-80"
-                  />
-                </div>
-              </Fade>
-            </div>
-          </div>
-          <div className="heroicon flex flex-1 z-[1001]">
-            <div className="cont flex items-center py-20 text-lg font-semibold">
-              <Fade triggerOnce>
-                <div className="text inline-block">
-                  <p className="pr-4 inline-block font-altoneReg text-[#22ce9d]">
-                    <a href="https://techstacksph.com" target="_blank">
-                      TechstacksPH
-                    </a>
-                  </p>
-                  <hr className=" hidden" />
-                  <div className="vline inline-block h-[20px] min-h-[1em] w-[1.5px] self-stretch bg-auto opacity-50 dark:opacity-50 align-middle"></div>
-                </div>
-              </Fade>
-              <div className="logos inline-block pl-14">
-                <Fade
-                  direction="left"
-                  delay={200}
-                  cascade
-                  damping={0.15}
-                  triggerOnce
-                >
-                  <ul className="flex flex-wrap gap-8 list-none justify-center">
-                    <li>
-                      <Image
-                        src={icon1}
-                        alt="icon1"
-                        className="hover:animate-bounce hover:cursor-pointer"
-                      />
-                    </li>
+                      <ul className="flex flex-wrap gap-8 list-none justify-center">
+                        <li>
+                          <Image
+                            src={icon1}
+                            alt="icon1"
+                            className="hover:animate-bounce hover:cursor-pointer"
+                          />
+                        </li>
 
-                    <li>
-                      <Image
-                        src={icon2}
-                        alt="icon2"
-                        className="hover:animate-bounce hover:cursor-pointer"
-                      />
-                    </li>
+                        <li>
+                          <Image
+                            src={icon2}
+                            alt="icon2"
+                            className="hover:animate-bounce hover:cursor-pointer"
+                          />
+                        </li>
 
-                    <li>
-                      <Image
-                        src={icon3}
-                        alt="icon3"
-                        className="hover:animate-bounce hover:cursor-pointer"
-                      />
-                    </li>
+                        <li>
+                          <Image
+                            src={icon3}
+                            alt="icon3"
+                            className="hover:animate-bounce hover:cursor-pointer"
+                          />
+                        </li>
 
-                    <li>
-                      <Image
-                        src={icon4}
-                        alt="icon4"
-                        className="hover:animate-bounce hover:cursor-pointer"
-                      />
-                    </li>
-                  </ul>
-                </Fade>
+                        <li>
+                          <Image
+                            src={icon4}
+                            alt="icon4"
+                            className="hover:animate-bounce hover:cursor-pointer"
+                          />
+                        </li>
+                      </ul>
+                    </Fade>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
-        <section className="about px-64 py-28" id="about">
-          <div className="abtcontainer">
-            <div className="aboutcont items-center grid justify-center grid-cols-2">
-              <div className="aboutimg flex">
-                <Fade triggerOnce>
-                  <div className="relative">
-                    <Image
-                      src={aboutimg}
-                      alt="mainimg"
-                      width={25 * 16}
-                      height={20 * 16}
-                      className="mainimg rounded-3xl object-cover"
-                    />
-                    <span className="lightwheel absolute -bottom-5 -right-16 transform translate-y-10">
+        <section className="about" id="about">
+          <div className="container px-64 py-28">
+            <div className="abtcontainer">
+              <div className="aboutcont items-center grid justify-center grid-cols-2 gap-14">
+                <div className="aboutimg flex">
+                  <Fade triggerOnce>
+                    <div className="relative">
                       <Image
-                        src={frontendspin}
-                        alt="frontendwheel"
-                        className="frontwheel h-[180px] w-[180px] rounded-full"
+                        src={aboutimg}
+                        alt="mainimg"
+                        width={25 * 16}
+                        height={20 * 16}
+                        className="mainimg rounded-3xl object-cover"
                       />
-                    </span>
-                    <Image
-                      src={laptopimg}
-                      alt="laptopimg"
-                      className="laptopimg absolute bottom-0 -right-[0.15rem] h-[60px] w-[60px] object-cover"
-                    />
-                  </div>
-                </Fade>
-              </div>
-              <div className="aboutcnt">
-                <Fade direction="right" cascade damping={0.1} triggerOnce>
-                  <h1 className="font-altoneBold text-1xl text-blue-700">
-                    ABOUT ME
-                  </h1>
+                      <span className="lightwheel absolute -bottom-5 -right-16 transform translate-y-10">
+                        <Image
+                          src={frontendspin}
+                          alt="frontendwheel"
+                          className="frontwheel h-[180px] w-[180px] rounded-full"
+                        />
+                      </span>
+                      <Image
+                        src={laptopimg}
+                        alt="laptopimg"
+                        className="laptopimg absolute bottom-0 -right-[0.15rem] h-[60px] w-[60px] object-cover"
+                      />
+                    </div>
+                  </Fade>
+                </div>
+                <div className="aboutcnt">
+                  <Fade direction="right" cascade damping={0.1} triggerOnce>
+                    <h1 className="font-altoneBold text-1xl text-blue-700">
+                      ABOUT ME
+                    </h1>
 
-                  <h1 className="font-altoneBold text-2xl">
-                    Front-end Developer based in Nueva Ecija, PH 📍
-                  </h1>
+                    <h1 className="font-altoneBold text-2xl">
+                      Front-end Developer based in Nueva Ecija, PH 📍
+                    </h1>
 
-                  <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
-                    I like CSS styling. I love video and photo editing and
-                    developing dynamic, intuitive user experiences.
-                  </p>
+                    <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
+                      I like CSS styling. I love video and photo editing and
+                      developing dynamic, intuitive user experiences.
+                    </p>
 
-                  <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
-                    My main stack currently is React/Next.js in combination with
-                    Tailwind CSS and TypeScript.
-                  </p>
+                    <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
+                      My main stack currently is React/Next.js in combination
+                      with Tailwind CSS and TypeScript.
+                    </p>
 
-                  <Button variant="link" size="default">
-                    <ChevronRight className="inline-block" />
-                    <span className="pl-2 font-altoneReg">
-                      <a href="/cv/CV.pdf" target="_blank">
-                        {" "}
-                        Download CV
-                      </a>
-                    </span>
-                  </Button>
-                </Fade>
+                    <Button variant="link" size="default">
+                      <ChevronRight className="inline-block" />
+                      <span className="pl-2 font-altoneReg">
+                        <a href="/cv/CV.pdf" target="_blank">
+                          {" "}
+                          Download CV
+                        </a>
+                      </span>
+                    </Button>
+                  </Fade>
+                </div>
               </div>
             </div>
           </div>
@@ -442,7 +448,7 @@ export default function Home() {
           </div>
         </section>
         <section id="contact">
-          <div className="contact px-64 py-28">
+          <div className="contact container px-64 py-28">
             <div className="contactcont items-center justify-center grid-cols-2">
               <div className="contactcnt">
                 <Fade direction="down" triggerOnce>

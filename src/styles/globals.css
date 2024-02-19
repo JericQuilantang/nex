@@ -18,12 +18,21 @@
   .projectscont .projectgrid .projectcard .projectimg img {
     @apply h-[30rem] w-[25rem];
  }
+ .hero {
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  display: flex;
+  max-height: 100vh;
+ }
+ .about-container{
+  max-width: 1400px;
+  justify-content: center;
+  margin:auto;
 
+ }
 }
 @media (min-width: 767px){
-  .hero{
-    height: 100vh;
-  }
   .mainimg{
     height: 20rem;
     width: 25rem;
@@ -32,12 +41,15 @@
 /* TABLET VIEW */
 @media (min-width: 767px) and (max-width: 1223px) {
   .hero{
-    padding: 8rem 2rem;
     display: flex;
     height: 100%;
     flex-direction: column;
     gap: 6em;
     height: auto;
+  }
+  .container{
+    padding: 8rem 2rem;
+
   }
   .hero .herocont{
     display: flex;
@@ -144,8 +156,11 @@
   .wave{
     display: none;
   }
-  .hero{
+  .container{
     padding: 8rem 2rem;
+
+  }
+  .hero{
     display: flex;
     height: 100%;
     flex-direction: column;
