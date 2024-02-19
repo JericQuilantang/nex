@@ -211,23 +211,25 @@ const Navbar = () => {
             </div>
           </div>
           <div className="mobileNav">
-            <li className="inline-flex items-center px-4 py-2 h-20 w-20">
-              <ModeToggle />
-            </li>
-            <li>
-              <Button
-                variant={"default"}
-                className="h-20 w-20"
-                data-collapse-toggle="navbar-default"
-                onClick={handleNav}
-              >
-                {showNavigation ? (
-                  <X className="h-8 w-8" />
-                ) : (
-                  <Menu className="h-8 w-8" />
-                )}
-              </Button>
-            </li>
+            <Fade cascade damping={0.2} triggerOnce>
+              <li className="inline-flex items-center px-4 py-2 h-20 w-20">
+                <ModeToggle />
+              </li>
+              <li>
+                <Button
+                  variant={"default"}
+                  className="h-20 w-20"
+                  data-collapse-toggle="navbar-default"
+                  onClick={handleNav}
+                >
+                  {showNavigation ? (
+                    <X className="h-8 w-8" />
+                  ) : (
+                    <Menu className="h-8 w-8" />
+                  )}
+                </Button>
+              </li>
+            </Fade>
           </div>
         </div>
       </nav>

@@ -20,10 +20,13 @@ import frontendspin from "../assets/frontend.svg";
 import Image from "next/image";
 import { Link } from "react-scroll";
 import { Fade } from "react-awesome-reveal";
+import { useMediaQuery } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const isSmallScreen = useMediaQuery("(max-width:767px)");
+
   return (
     <>
       <title>Jeric.dev</title>
@@ -144,7 +147,7 @@ export default function Home() {
           <div className="wave wave2"></div>
           <div className="wave wave3"></div>
           <div className="wave wave4"></div>
-          <div className="container px-64 pb-28 pt-48 z-[1001]">
+          <div className="container px-56 pb-28 pt-48 z-[1001]">
             <div className="content">
               <div className="herocont flex justify-between">
                 <div className="heroconttxt h-auto w-[28rem]">
@@ -216,7 +219,7 @@ export default function Home() {
                   </Fade>
                   <div className="logos inline-block pl-14">
                     <Fade
-                      direction="left"
+                      direction={isSmallScreen ? "up" : "left"}
                       delay={200}
                       cascade
                       damping={0.15}
@@ -263,65 +266,68 @@ export default function Home() {
           </div>
         </section>
         <section className="about" id="about">
-          <div className="container px-64 py-28">
-            <div className="abtcontainer">
-              <div className="aboutcont items-center grid justify-center grid-cols-2 gap-14">
-                <div className="aboutimg flex">
-                  <Fade triggerOnce>
-                    <div className="relative">
+          <div className="abtcontainer px-64 py-28">
+            <div className="aboutcont items-center grid justify-center grid-cols-2 gap-14">
+              <div className="aboutimg flex">
+                <Fade triggerOnce>
+                  <div className="relative">
+                    <Image
+                      src={aboutimg}
+                      alt="mainimg"
+                      width={25 * 16}
+                      height={20 * 16}
+                      className="mainimg rounded-3xl object-cover"
+                    />
+                    <span className="lightwheel absolute -bottom-5 -right-16 transform translate-y-10">
                       <Image
-                        src={aboutimg}
-                        alt="mainimg"
-                        width={25 * 16}
-                        height={20 * 16}
-                        className="mainimg rounded-3xl object-cover"
+                        src={frontendspin}
+                        alt="frontendwheel"
+                        className="frontwheel h-[180px] w-[180px] rounded-full"
                       />
-                      <span className="lightwheel absolute -bottom-5 -right-16 transform translate-y-10">
-                        <Image
-                          src={frontendspin}
-                          alt="frontendwheel"
-                          className="frontwheel h-[180px] w-[180px] rounded-full"
-                        />
-                      </span>
-                      <Image
-                        src={laptopimg}
-                        alt="laptopimg"
-                        className="laptopimg absolute bottom-0 -right-[0.15rem] h-[60px] w-[60px] object-cover"
-                      />
-                    </div>
-                  </Fade>
-                </div>
-                <div className="aboutcnt">
-                  <Fade direction="right" cascade damping={0.1} triggerOnce>
-                    <h1 className="font-altoneBold text-1xl text-blue-700">
-                      ABOUT ME
-                    </h1>
+                    </span>
+                    <Image
+                      src={laptopimg}
+                      alt="laptopimg"
+                      className="laptopimg absolute bottom-0 -right-[0.15rem] h-[60px] w-[60px] object-cover"
+                    />
+                  </div>
+                </Fade>
+              </div>
+              <div className="aboutcnt">
+                <Fade
+                  direction={isSmallScreen ? "up" : "right"}
+                  cascade
+                  damping={0.1}
+                  triggerOnce
+                >
+                  <h1 className="font-altoneBold text-1xl text-blue-700">
+                    ABOUT ME
+                  </h1>
 
-                    <h1 className="font-altoneBold text-2xl">
-                      Front-end Developer based in Nueva Ecija, PH 📍
-                    </h1>
+                  <h1 className="font-altoneBold text-2xl">
+                    Front-end Developer based in Nueva Ecija, PH 📍
+                  </h1>
 
-                    <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
-                      I like CSS styling. I love video and photo editing and
-                      developing dynamic, intuitive user experiences.
-                    </p>
+                  <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
+                    I like CSS styling. I love video and photo editing and
+                    developing dynamic, intuitive user experiences.
+                  </p>
 
-                    <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
-                      My main stack currently is React/Next.js in combination
-                      with Tailwind CSS and TypeScript.
-                    </p>
+                  <p className="py-4 text-lg text-[#7F7F7F] font-altoneReg">
+                    My main stack currently is React/Next.js in combination with
+                    Tailwind CSS and TypeScript.
+                  </p>
 
-                    <Button variant="link" size="default">
-                      <ChevronRight className="inline-block" />
-                      <span className="pl-2 font-altoneReg">
-                        <a href="/cv/CV.pdf" target="_blank">
-                          {" "}
-                          Download CV
-                        </a>
-                      </span>
-                    </Button>
-                  </Fade>
-                </div>
+                  <Button variant="link" size="default">
+                    <ChevronRight className="inline-block" />
+                    <span className="pl-2 font-altoneReg">
+                      <a href="/cv/CV.pdf" target="_blank">
+                        {" "}
+                        Download CV
+                      </a>
+                    </span>
+                  </Button>
+                </Fade>
               </div>
             </div>
           </div>
@@ -343,7 +349,11 @@ export default function Home() {
                   </div>
                 </div>
               </Fade>
-              <Fade direction="right" delay={300} triggerOnce>
+              <Fade
+                direction={isSmallScreen ? "up" : "right"}
+                delay={300}
+                triggerOnce
+              >
                 <div className="projecttxtbox mt-16 -ml-32 z-10">
                   <div className="projectdesc bg-white dark:bg-[#171717] rounded-3xl px-5 py-10 shadow-md dark:shadow-zinc-800 min-h-[20rem] w-[28rem]">
                     <h1 className="font-altoneBold text-2xl">Project 1</h1>
@@ -370,7 +380,12 @@ export default function Home() {
               </Fade>
             </div>
             <div className="projectgrid rev flex flex-1 py-10 justify-center">
-              <Fade direction="left" delay={300} triggerOnce className="z-10">
+              <Fade
+                direction={isSmallScreen ? "up" : "left"}
+                delay={300}
+                triggerOnce
+                className="z-10"
+              >
                 <div className="projecttxtbox mt-16 -mr-32">
                   <div className="projectdesc bg-white dark:bg-[#171717] rounded-3xl px-5 py-10 shadow-md dark:shadow-zinc-800 min-h-[20rem] w-[28rem]">
                     <h1 className="font-altoneBold text-2xl">Project 2</h1>
@@ -419,7 +434,11 @@ export default function Home() {
                   </div>
                 </div>
               </Fade>
-              <Fade direction="right" delay={300} triggerOnce>
+              <Fade
+                direction={isSmallScreen ? "up" : "right"}
+                delay={300}
+                triggerOnce
+              >
                 <div className="projecttxtbox mt-16 -ml-32 z-10">
                   <div className="projectdesc bg-white dark:bg-[#171717] rounded-3xl px-5 py-10 shadow-md dark:shadow-zinc-800 min-h-[20rem] w-[28rem]">
                     <h1 className="font-altoneBold text-2xl">Project 3</h1>
@@ -451,19 +470,19 @@ export default function Home() {
           <div className="contact container px-64 py-28">
             <div className="contactcont items-center justify-center grid-cols-2">
               <div className="contactcnt">
-                <Fade direction="down" triggerOnce>
+                <Fade direction="down" triggerOnce delay={150}>
                   <h1 className="font-altoneBold text-1xl text-blue-700">
                     CONTACT DETAILS
                   </h1>
                 </Fade>
-                <Fade direction="up" triggerOnce>
+                <Fade direction="up" triggerOnce delay={150}>
                   <h2 className="font-altoneBold text-3xl">
                     Get in touch with me!👇
                   </h2>
                 </Fade>
               </div>
               <div className="contacticontxtcont pt-12 flex flex-wrap gap-10 grid-cols-2">
-                <Fade cascade damping={0.15} triggerOnce>
+                <Fade cascade damping={0.15} triggerOnce delay={150}>
                   <div className="contacticontxt flex">
                     <Button
                       size="icon"

@@ -44,13 +44,13 @@ const Footer = () => {
       <footer>
         <div className=" bg-navColor ">
           <div className="fttxt container font-extrabold text-lg px-60 py-[30px] font-altoneBold flex justify-between items-center">
-            <Fade triggerOnce>
+            <Fade triggerOnce delay={150}>
               <div className="ftp text-white">
                 Copyright © 2024. All rights are reserved
               </div>
             </Fade>
             <div className="ficon flex gap-2 py-5 justify-end">
-              <Fade cascade damping={0.15} triggerOnce>
+              <Fade cascade damping={0.15} triggerOnce delay={150}>
                 <Button variant="default" size="icon">
                   <a
                     href="https://www.linkedin.com/in/jeric-quilantang-a86508288/"
