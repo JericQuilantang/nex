@@ -269,7 +269,7 @@ export default function Home() {
           <div className="abtcontainer px-64 py-28">
             <div className="aboutcont items-center grid justify-center grid-cols-2 gap-14">
               <div className="aboutimg flex">
-                <Fade triggerOnce>
+                <Fade triggerOnce delay={200}>
                   <div className="relative">
                     <Image
                       src={aboutimg}
@@ -299,6 +299,7 @@ export default function Home() {
                   cascade
                   damping={0.1}
                   triggerOnce
+                  delay={300}
                 >
                   <h1 className="font-altoneBold text-1xl text-blue-700">
                     ABOUT ME
@@ -334,11 +335,13 @@ export default function Home() {
         </section>
         <section className="projects px-64 py-28" id="projects">
           <h1 className="headtxt font-altoneBold text-4xl text-center pb-[3.5rem]">
-            PROJECTS
+            <Fade triggerOnce delay={300} direction="up">
+              PROJECTS
+            </Fade>
           </h1>
           <div className="projectscont">
             <div className="projectgrid flex flex-1 py-10 justify-center">
-              <Fade delay={150} triggerOnce>
+              <Fade delay={150} triggerOnce direction="up">
                 <div className="projectcard">
                   <div className="projectimg">
                     <Image
@@ -351,7 +354,7 @@ export default function Home() {
               </Fade>
               <Fade
                 direction={isSmallScreen ? "up" : "right"}
-                delay={300}
+                delay={isSmallScreen ? 300 : 800}
                 triggerOnce
               >
                 <div className="projecttxtbox mt-16 -ml-32 z-10">
@@ -382,7 +385,7 @@ export default function Home() {
             <div className="projectgrid rev flex flex-1 py-10 justify-center">
               <Fade
                 direction={isSmallScreen ? "up" : "left"}
-                delay={300}
+                delay={isSmallScreen ? 300 : 800}
                 triggerOnce
                 className="z-10"
               >
@@ -410,7 +413,7 @@ export default function Home() {
                   </div>
                 </div>
               </Fade>
-              <Fade delay={150} triggerOnce>
+              <Fade delay={150} triggerOnce direction="up">
                 <div className="projectcard">
                   <div className="projectimg">
                     <Image
@@ -423,7 +426,7 @@ export default function Home() {
               </Fade>
             </div>
             <div className="projectgrid flex flex-1 py-10 justify-center">
-              <Fade delay={150} triggerOnce>
+              <Fade delay={150} triggerOnce direction="up">
                 <div className="projectcard">
                   <div className="projectimg">
                     <Image
@@ -436,7 +439,7 @@ export default function Home() {
               </Fade>
               <Fade
                 direction={isSmallScreen ? "up" : "right"}
-                delay={300}
+                delay={isSmallScreen ? 300 : 800}
                 triggerOnce
               >
                 <div className="projecttxtbox mt-16 -ml-32 z-10">
