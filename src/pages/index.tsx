@@ -322,7 +322,7 @@ export default function Home() {
                   <Button variant="link" size="default">
                     <ChevronRight className="inline-block" />
                     <span className="pl-2 font-altoneReg">
-                      <a href="/cv/CV.pdf" target="_blank">
+                      <a href="/CV.pdf" target="_blank">
                         {" "}
                         Download CV
                       </a>
