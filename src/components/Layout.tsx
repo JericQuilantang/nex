@@ -1,39 +1,51 @@
-
-import React, { ReactNode } from 'react'
-import Navbar from './Navbar';
-import Footer from './Footer';
-import { ThemeProvider } from './theme-provider';
+"use client";
+import React, { ReactNode, useEffect } from "react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { ThemeProvider } from "./theme-provider";
 import ScrollToTop from "react-scroll-to-top";
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp } from "lucide-react";
+import SplashScreen from "./SplashScreen";
+import { usePathname } from "next/navigation";
 
-
-interface LayoutProps{
-    children: ReactNode;
+interface LayoutProps {
+  children: ReactNode;
 }
-const Layout = ({children}: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const [isLoading, setIsLoading] = React.useState(isHome);
+
+  useEffect(() => {
+    if (isLoading) return;
+  }, [isLoading]);
   return (
-    <div className={'${inter.className}'}>
-      <ScrollToTop smooth component={<ArrowUp />} style={
-        { zIndex: 9999, 
-          backgroundColor: "#21ce9a",
-          display: "flex", 
-          justifyContent: "center", 
-          alignItems: "center", 
-          borderRadius: "100%"
-        }
-      }
-      />
-      <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-          >
-      <Navbar />
-      <main>{children}</main>
-      <Footer />
-      </ThemeProvider>
-
+    <div className={"${inter.className}"}>
+      {isLoading && isHome ? (
+        <SplashScreen finishLoading={() => setIsLoading(false)} />
+      ) : (
+        <>
+          <ScrollToTop
+            smooth
+            component={<ArrowUp />}
+            style={{
+              zIndex: 9999,
+              backgroundColor: "#21ce9a",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "100%",
+            }}
+          />
+          <ThemeProvider attribute="class" defaultTheme="system">
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
