@@ -21,29 +21,29 @@ const Layout = ({ children }: LayoutProps) => {
   }, [isLoading]);
   return (
     <div className={"${inter.className}"}>
-      {isLoading && isHome ? (
-        <SplashScreen finishLoading={() => setIsLoading(false)} />
-      ) : (
-        <>
-          <ScrollToTop
-            smooth
-            component={<ArrowUp />}
-            style={{
-              zIndex: 9999,
-              backgroundColor: "#21ce9a",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: "100%",
-            }}
-          />
-          <ThemeProvider attribute="class" defaultTheme="system">
+      <ThemeProvider attribute="class" defaultTheme="dark">
+        {isLoading && isHome ? (
+          <SplashScreen finishLoading={() => setIsLoading(false)} />
+        ) : (
+          <>
+            <ScrollToTop
+              smooth
+              component={<ArrowUp />}
+              style={{
+                zIndex: 9999,
+                backgroundColor: "#21ce9a",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "100%",
+              }}
+            />
             <Navbar />
             <main>{children}</main>
             <Footer />
-          </ThemeProvider>
-        </>
-      )}
+          </>
+        )}
+      </ThemeProvider>
     </div>
   );
 };

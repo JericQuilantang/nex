@@ -2,7 +2,6 @@
 import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
-import { NavItems } from "@/constants/Nav";
 import { ModeToggle } from "./ui/toggle-mode";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { Menu, X } from "lucide-react";
